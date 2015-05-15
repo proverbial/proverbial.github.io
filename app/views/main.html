@@ -5,19 +5,23 @@
   </div>
 </div>
 
+
+Trying to implement filter by first letter and failing miserably
+
 <div class="row alert alert-info text-center">
   <p>
     Filter by first letter
   </p>
   <ul class="list-inline">
     <li ng-repeat="letter in alphabet">
-      <h3><a href>{{letter}}</a></h3>
+      <h3><a href ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
     </li>
   </ul>
 </div>
 
+
 <div class="row well">
-  <div ng-repeat="proverb in proverbs | filter:query">
+  <div ng-repeat="proverb in proverbs | filter:query | firstLetter:proverbs:activeLetter>
     <a href="#/{{langID}}/{{$index}}">{{proverb}}</a>
   </div>
 </div>
