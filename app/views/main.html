@@ -21,7 +21,7 @@ Trying to implement filter by first letter and failing miserably
 
 
 <div class="row well">
-  <div ng-repeat="proverb in proverbs | filter:query | firstLetter:proverbs:activeLetter>
+  <div ng-repeat="proverb in proverbs | filter:query | firstLetter:proverbs:activeLetter">
     <a href="#/{{langID}}/{{$index}}">{{proverb}}</a>
   </div>
 </div>
