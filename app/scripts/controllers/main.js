@@ -20,11 +20,17 @@ angular.module('raidersApp')
       $scope.proverbs = data;
     });
 
+
+
+    $scope.getProverbID = function(prov) {
+      return $scope.proverbs.indexOf(prov);
+    };
+
     data.setLang($scope.langID);
 
     $scope.setActiveLetter = function(letter) {
       $scope.activeLetter = letter;
-    }
+    };
 
     $scope.isActive = function(letter) {
       return $scope.activeLetter == letter;
