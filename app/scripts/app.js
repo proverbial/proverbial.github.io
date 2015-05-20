@@ -15,18 +15,18 @@ angular
     'ngResource'
   ])
   .filter('firstLetter', function () {
-    return function (input) {
-      console.log(input);
-      input = input || [];
-      var out = [];
-      input.forEach(function (item) {
-        console.log("current item is", item, item.charAt(0));
-        if (item.charAt(0).toUpperCase() == letter) {
-            out.push(item);
-        }
-      });
-      return out;
-    };
+      return function (input) {
+          var input = input || [];
+          var letter = "A";
+          var out = [];
+          angular.forEach(input, function (item) {
+              console.log("current item is", item, item.charAt(0));
+              if (item.charAt(0).toUpperCase() == letter) {
+                  out.push(item);
+              }
+          });
+          return out;
+      };
   })
   .config(function ($routeProvider) {
     $routeProvider

@@ -21,9 +21,13 @@ angular.module('raidersApp')
     });
 
     data.setLang($scope.langID);
+
     $scope.setActiveLetter = function(letter) {
       $scope.activeLetter = letter;
-      console.log($scope.activeLetter);
+    }
+
+    $scope.isActive = function(letter) {
+      return $scope.activeLetter == letter;
     }
 
   });

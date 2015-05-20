@@ -3,6 +3,10 @@ html {
   min-height: 100%;
 }
 
+.active {
+  color: red;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -15,6 +19,17 @@ body {
   padding-top: 80px;
   font-family: 'Quando';
   margin-bottom: 60px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+a:active {
+  color: red;
 }
 
 main.container-fluid {
