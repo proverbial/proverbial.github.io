@@ -1,26 +1,29 @@
-<div class="menu">
-  <div class="row alert alert-info">
+<div class="row menu alert">
+  <div class="container">
     <div class="input-group input-group-lg">
       <input type="text" class="form-control" placeholder="Search" aria-describedby="addon" ng-model="query">
       <span class="input-group-addon" id="addon"><i class="fa fa-search"></i></span>
     </div>
   </div>
-
-  <div class="row alert alert-info text-center">
-    <ul class="list-inline">
-      <li ng-repeat="letter in alphabet">
-        <h3><a href class="letter" ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
-      </li>
-    </ul>
-    <h4><a href class="btn btn-default" ng-click="toggleFilter()">Show All</a></h4>
-    <p>
-      {{displayMessage()}}
-    </p>
-  </div>
 </div>
-<div class="row well">
-  <div ng-repeat="proverb in proverbs | filter:query | firstLetter:activeLetter:filterEnabled">
-    <a href="#/{{langID}}/{{getProverbID(proverb)}}" class="col-lg-4 col-md-6">
+
+<div class="row menu alert text-center">
+  <ul class="list-inline">
+    <li ng-repeat="letter in alphabet">
+      <h3><a href class="letter" ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
+    </li>
+  </ul>
+  <p>
+    Clear Filter
+  </p>
+  <p>
+    Currently showing proverbs starting with {{activeLetter}}.
+  </p>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="proverb in proverbs | filter:query | firstLetter:activeLetter:filterEnabled">
+  <div class="card">
+    <a href="#/{{langID}}/{{getProverbID(proverb)}}" class="text">
       {{proverb}}
     </a>
   </div>

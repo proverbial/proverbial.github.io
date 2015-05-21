@@ -1,10 +1,18 @@
+/*
+ * Color scheme from: https://color.adobe.com/Theme-2-color-theme-6131303
+ */
+
 html {
   position: relative;
   min-height: 100%;
 }
 
-.active {
-  color: red;
+.alert {
+  border-radius: 0px;
+}
+
+.inline {
+  display:inline;
 }
 
 .browsehappy {
@@ -14,11 +22,31 @@ html {
   padding: 0.2em 0;
 }
 
+.card {
+  display: table;
+  width: 100%;
+  height: 280px;
+  text-align: center;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #453D4E;
+}
+
+.text {
+  display: table-cell;
+  vertical-align: middle;
+  text-shadow: 1px 1px 0px black;
+}
+
 body {
+  background-color: #E7C299;
+  color: #E6F1F5;
   padding: 0;
   padding-top: 80px;
   font-family: 'Quando';
+  font-size: 1.8em;
   margin-bottom: 60px;
+  background-color: #101126;
 }
 
 .menu {
@@ -31,10 +59,11 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
+  color: #E7E3CC;
 }
 
 a:active, a:focus {
-  color: red;
+  color: #E7C299;
 }
 
 main.container-fluid {
@@ -58,7 +87,6 @@ main.container-fluid {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */

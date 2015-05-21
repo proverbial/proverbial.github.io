@@ -34,7 +34,7 @@ angular.module('raidersApp')
     }
 
     $scope.isActive = function(letter) {
-      return $scope.activeLetter == letter;
+      return $scope.activeLetter === letter;
     }
 
     $scope.setActiveLetter = function(letter) {

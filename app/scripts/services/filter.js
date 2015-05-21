@@ -9,6 +9,7 @@
  */
 angular.module('raidersApp')
   .filter('firstLetter', function () {
+    console.log("Filter called.");
     return function(input, letter, enabled) {
       if (enabled) {
         return (input || []).filter(function(item) {
