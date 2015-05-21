@@ -28,7 +28,7 @@ a:active {
   text-decoration: none;
 }
 
-a:active {
+a:active, a:focus {
   color: red;
 }
 

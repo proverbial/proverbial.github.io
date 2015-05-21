@@ -8,16 +8,16 @@
 <div class="row alert alert-info text-center">
   <ul class="list-inline">
     <li ng-repeat="letter in alphabet">
-      <h3><a href class="letter" ng-class="{active:isActive(letter)}" ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
+      <h3><a href class="letter" ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
     </li>
   </ul>
+  <h4><a href ng-click="toggleFilter()">Show All</a></h4>
   <p>
-    Currently showing proverbs starting with {{activeLetter}}.
+    {{displayMessage()}}
   </p>
 </div>
-
 <div class="row well">
-  <div ng-repeat="proverb in proverbs | filter:query | firstLetter:activeLetter">
+  <div ng-repeat="proverb in proverbs | filter:query | firstLetter:activeLetter:filterEnabled">
     <a href="#/{{langID}}/{{getProverbID(proverb)}}" class="col-lg-4 col-md-6">
       {{proverb}}
     </a>

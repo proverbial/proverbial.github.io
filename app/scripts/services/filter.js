@@ -9,10 +9,14 @@
  */
 angular.module('raidersApp')
   .filter('firstLetter', function () {
-    return function(input, letter) {
-      return (input || []).filter(function(item) {
-        return item.charAt(0).toUpperCase() === letter;
-      });
+    return function(input, letter, enabled) {
+      if (enabled) {
+        return (input || []).filter(function(item) {
+          return item.charAt(0).toUpperCase() == letter;
+        });
+      } else {
+        return input || [];
+      }
     };
   });
 

@@ -21,6 +21,11 @@ angular.module('raidersApp')
     });
 
 
+    $scope.filterEnabled = true;
+
+    $scope.toggleFilter = function() {
+      $scope.filterEnabled = !$scope.filterEnabled;
+    }
 
     $scope.getProverbID = function(prov) {
       return $scope.proverbs.indexOf(prov);
@@ -29,8 +34,19 @@ angular.module('raidersApp')
     data.setLang($scope.langID);
 
     $scope.setActiveLetter = function(letter) {
+      if(!$scope.filterEnabled) {
+        $scope.filterEnabled = true;
+      }
       $scope.activeLetter = letter;
     };
+
+    $scope.displayMessage = function() {
+      if(!$scope.filterEnabled) {
+        return "Showing all proverbs.";
+      } else {
+        return "Proverbs starting with " + $scope.activeLetter + "."
+      }
+    }
 
     $scope.isActive = function(letter) {
       return $scope.activeLetter == letter;
