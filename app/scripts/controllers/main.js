@@ -9,29 +9,33 @@
  */
 angular.module('raidersApp')
   .controller('MainCtrl', function (data, $http, $scope, $routeParams) {
-    // Defining variables
+
+    // Variables
     $scope.alphabet = data.getAlphabet();
     $scope.query = "";
     $scope.langID = $routeParams.langID;
     $scope.languages = data.getLanguages();
     $scope.activeLetter = "A";
+    $scope.filterEnabled = true;
+    data.setLang($scope.langID);
 
+    // JSON get
     data.getProverbs($scope.langID).success(function(data) {
       $scope.proverbs = data;
     });
 
-
-    $scope.filterEnabled = true;
+    // Functionality
+    $scope.getProverbID = function(prov) {
+      return $scope.proverbs.indexOf(prov);
+    };
 
     $scope.toggleFilter = function() {
       $scope.filterEnabled = !$scope.filterEnabled;
     }
 
-    $scope.getProverbID = function(prov) {
-      return $scope.proverbs.indexOf(prov);
-    };
-
-    data.setLang($scope.langID);
+    $scope.isActive = function(letter) {
+      return $scope.activeLetter == letter;
+    }
 
     $scope.setActiveLetter = function(letter) {
       if(!$scope.filterEnabled) {
@@ -47,9 +51,4 @@ angular.module('raidersApp')
         return "Proverbs starting with " + $scope.activeLetter + "."
       }
     }
-
-    $scope.isActive = function(letter) {
-      return $scope.activeLetter == letter;
-    }
-
   });

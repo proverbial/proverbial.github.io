@@ -21,6 +21,11 @@ body {
   margin-bottom: 60px;
 }
 
+.menu {
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+}
+
 a:link,
 a:visited,
 a:hover,

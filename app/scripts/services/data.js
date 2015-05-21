@@ -20,6 +20,21 @@ angular.module('raidersApp')
     'se'
   ];
 
+  var languages = [
+    {
+      long: "English",
+      short: "en"
+    },
+    {
+      long: "Portuguese",
+      short: "pt"
+    },
+    {
+      long: "Swedish",
+      short: "se"
+    }
+  ]
+
   // Functionality
   return {
     getAlphabet: function() {
