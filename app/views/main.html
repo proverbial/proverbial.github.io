@@ -13,11 +13,11 @@
       <h3><a href class="letter" ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
     </li>
   </ul>
-  <p>
+  <a href ng-click="toggleFilter()">
     Clear Filter
-  </p>
+  </a>
   <p>
-    Currently showing proverbs starting with {{activeLetter}}.
+    {{displayMessage()}}
   </p>
 </div>
 

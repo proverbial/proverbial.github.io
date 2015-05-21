@@ -12,6 +12,7 @@ angular.module('raidersApp')
   // The first selected language by default
   var alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split('');
   var langID = "pt";
+  var langIndex = 0;
 
   // List of available languages
   var languages = [
@@ -51,6 +52,12 @@ angular.module('raidersApp')
     },
     setLang: function(newlangID) {
       langID = newlangID;
+    },
+    getLangIndex: function() {
+      return langIndex;
+    },
+    setLangIndex: function(newLangIndex) {
+      langIndex = newLangIndex;
     }
   }
 });

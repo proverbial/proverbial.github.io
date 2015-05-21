@@ -46,7 +46,7 @@ angular.module('raidersApp')
 
     $scope.displayMessage = function() {
       if(!$scope.filterEnabled) {
-        return "Showing all proverbs.";
+        return " proverbs.";
       } else {
         return "Proverbs starting with " + $scope.activeLetter + "."
       }
