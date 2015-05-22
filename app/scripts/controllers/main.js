@@ -15,8 +15,7 @@ angular.module('raidersApp')
     $scope.query = "";
     $scope.langID = $routeParams.langID;
     $scope.languages = data.getLanguages();
-    $scope.activeLetter = "A";
-    $scope.filterEnabled = true;
+    $scope.filterEnabled = false;
     data.setLang($scope.langID);
 
     // JSON get

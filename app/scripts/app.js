@@ -30,10 +30,6 @@ angular
   })
   .config(function ($routeProvider) {
     $routeProvider
-      .when('random', {
-        templateUrl: 'views/proverb.html',
-        controller: 'RandomCtrl'
-      })
       .when('/:langID/:proverbID', {
         templateUrl: 'views/proverb.html',
         controller: 'ProverbCtrl'

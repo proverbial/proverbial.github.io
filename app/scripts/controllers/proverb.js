@@ -9,13 +9,13 @@
  */
 angular.module('raidersApp')
   .controller('ProverbCtrl', function ($http, data, $scope, $routeParams) {
-    $scope.langID = $routeParams.langID;
+    var langID = $routeParams.langID;
+    var provID = $routeParams.proverbID;
 
-
-    $http.get('/source/' + $routeParams.langID + '.json').
-    success(function(result) {
-      $scope.proverb = result[$routeParams.proverbID];
+    data.getProverbs(langID).success(function(result) {
+      $scope.proverb = result[provID];
       $('.card').css("background-color", data.colorize($scope.proverb));
+      console.log(btoa($scope.proverb) + " " + atob(btoa($scope.proverb)));
     });
 
   });
