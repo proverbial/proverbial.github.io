@@ -1,28 +1,28 @@
-<div class="row menu alert">
+<div class="menu">
   <div class="container">
-    <div class="input-group input-group-lg">
+    <div class="search input-group input-group-lg">
       <input type="text" class="form-control" placeholder="Search" aria-describedby="addon" ng-model="query">
       <span class="input-group-addon" id="addon"><i class="fa fa-search"></i></span>
     </div>
   </div>
 </div>
 
-<div class="row menu alert text-center">
+<div class="menu text-center">
   <ul class="list-inline">
     <li ng-repeat="letter in alphabet">
-      <h3><a href class="letter" ng-click="setActiveLetter(letter)">{{letter}}</a></h3>
+      <a href class="letter" ng-click="setActiveLetter(letter)">{{letter}}</a>
     </li>
   </ul>
   <a href ng-click="toggleFilter()">
     Clear Filter
   </a>
-  <p>
+  <h4>
     {{displayMessage()}}
-  </p>
+  </h4>
 </div>
 
 <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="proverb in proverbs | filter:query | firstLetter:activeLetter:filterEnabled">
-  <div class="card">
+  <div class="card card-sm" ng-style="{'background-color':getBackgroundColor(proverb)}">
     <a href="#/{{langID}}/{{getProverbID(proverb)}}" class="text">
       {{proverb}}
     </a>

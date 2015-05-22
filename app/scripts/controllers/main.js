@@ -29,6 +29,10 @@ angular.module('raidersApp')
       return $scope.proverbs.indexOf(prov);
     };
 
+    $scope.getBackgroundColor = function(str) {
+      return data.colorize(str);
+    };
+
     $scope.toggleFilter = function() {
       $scope.filterEnabled = !$scope.filterEnabled;
     }
@@ -45,10 +49,13 @@ angular.module('raidersApp')
     };
 
     $scope.displayMessage = function() {
-      if(!$scope.filterEnabled) {
-        return " proverbs.";
-      } else {
-        return "Proverbs starting with " + $scope.activeLetter + "."
+      var message = data.convertToLongName(data.getLang()) + " proverbs";
+      if($scope.filterEnabled) {
+        message += " starting with " + $scope.activeLetter;
       }
+      if($scope.query !== "") {
+        message += " that contain \"" + $scope.query + "\"";
+      }
+      return message;
     }
   });

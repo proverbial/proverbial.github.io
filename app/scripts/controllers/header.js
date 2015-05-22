@@ -10,15 +10,11 @@
 angular.module('raidersApp')
   .controller('HeaderCtrl', function (data, $http, $scope, $routeParams) {
 
-    $scope.alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split('');
+    $scope.alphabet = data.getAlphabet();
     $scope.languages = data.getLanguages();
-    
+
     $scope.getLongName = function() {
-      for (var i = 0, j = $scope.languages.length; i < j ; i++) {
-        if ($scope.languages[i].short === data.getLang()) {
-          return $scope.languages[i].long;
-        }
-      }
+      return data.convertToLongName(data.getLang());
     }
 
     $scope.langID = function () {
