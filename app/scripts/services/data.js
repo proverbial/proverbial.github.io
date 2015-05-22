@@ -38,14 +38,15 @@ angular.module('raidersApp')
 
   // Functionality
   return {
+
     getAlphabet: function() {
       return alphabet;
     },
     getLanguages: function() {
       return languages;
     },
-    getProverbs: function(lang) {
-      return $http.get('/source/' + lang + '.json', {cache: 'true'})
+    getProverbs: function(path) {
+      return $http.get('/source/' + path + '.json', {cache: 'true'})
     },
     getLang: function() {
       return langID;
@@ -53,11 +54,11 @@ angular.module('raidersApp')
     setLang: function(newlangID) {
       langID = newlangID;
     },
-    getLangIndex: function() {
-      return langIndex;
-    },
     setLangIndex: function(newLangIndex) {
       langIndex = newLangIndex;
+    },
+    getLangIndex: function() {
+      return langIndex;
     }
   }
 });

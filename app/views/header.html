@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href>Random</a></li>
         <li class="dropdown">
-          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img ng-src="images/{{langID()}}.png" /> {{langID()}}<span class="caret"></span></a>
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img ng-src="images/{{langID()}}.png" /> {{getLongName()}}<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#/{{language.short}}" ng-repeat="language in languages"><img ng-src="images/{{language.short}}.png" /> {{language.long}}</a></li>
           </ul>
