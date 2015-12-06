@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Proverbial | the proverbial webapp</title>
+    <title>Proverbial | your proverbial webapp</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -20,23 +20,19 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <!-- endgooglefonts -->
   </head>
-  <body ng-app="raidersApp">
+  <body ng-app="proverbial">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <header class="header" ng-controller="HeaderCtrl">
-      <div ng-include="'views/header.html'"></div>
-    </header>
+    <navbar proverbial-navbar></navbar>
 
     <main class="container-fluid">
       <div ng-view=""></div>
     </main>
 
-    <footer class="footer">
-      <div ng-include="'views/footer.html'"></div>
-    </footer>
+    <footer proverbial-footer></footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -60,15 +56,16 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/extentions.js"></script>
+    <script src="app.js"></script>
+    <script src="scripts/main.js"></script>
 
-    <script src="scripts/services/data.js"></script>
-    <script src="scripts/services/filter.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/proverb.js"></script>
-    <script src="scripts/controllers/random.js"></script>
-    <script src="scripts/controllers/header.js"></script>
+    <script src="components/proverb-list/data.js"></script>
+    <script src="components/proverb-list/filter.js"></script>
+    <script src="components/proverb-list/main.js"></script>
+    <script src="components/proverb-detail/proverb.js"></script>
+    <script src="components/proverb-detail/random.js"></script>
+    <script src="components/navbar/header.js"></script>
+    <script src="components/footer/footer.js"></script>
     <!-- endbuild -->
   </body>
 </html>

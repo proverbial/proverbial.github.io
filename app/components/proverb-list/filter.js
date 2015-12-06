@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name raidersApp.controller:AboutCtrl
+ * @name proverbial.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the raidersApp
+ * Controller of the proverbial
  */
-angular.module('raidersApp')
+angular.module('proverbial')
   .filter('firstLetter', function () {
     console.log("Filter called.");
     return function(input, letter, enabled) {

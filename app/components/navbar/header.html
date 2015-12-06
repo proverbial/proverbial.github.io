@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -12,9 +12,9 @@
     <div class="collapse navbar-collapse" id="js-navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img ng-src="images/{{langID()}}.png" /> {{getLongName()}}<span class="caret"></span></a>
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img ng-src="assets/img/flags/{{vm.langID()}}.png" /> {{getLongName()}}<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#/{{language.short}}" ng-repeat="language in languages"><img ng-src="images/{{language.short}}.png" /> {{language.long}}</a></li>
+            <li><a href="#/{{language.short}}" ng-repeat="language in languages"><img ng-src="assets/img/flags/{{vm.language.short}}.png" /> {{language.long}}</a></li>
           </ul>
         </li>
       </ul>

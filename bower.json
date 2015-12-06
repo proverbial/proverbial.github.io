@@ -14,5 +14,5 @@
     "font-awesome": "~4.3.0"
   },
   "appPath": "app",
-  "moduleName": "raidersApp"
+  "moduleName": "proverbial"
 }

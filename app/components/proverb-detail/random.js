@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name raidersApp.controller:AboutCtrl
+ * @name proverbial.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the raidersApp
+ * Controller of the proverbial
  */
-angular.module('raidersApp')
+angular.module('proverbial')
   .controller('RandomCtrl', function (data, $http, $scope, $routeParams) {
 
 

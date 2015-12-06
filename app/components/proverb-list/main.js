@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name raidersApp.controller:MainCtrl
+ * @name proverbial.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the raidersApp
+ * Controller of the proverbial
  */
-angular.module('raidersApp')
+angular.module('proverbial')
   .controller('MainCtrl', function (data, $http, $scope, $routeParams) {
 
     // Variables

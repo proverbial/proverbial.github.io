@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name raidersApp.controller:AboutCtrl
+ * @name proverbial.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the raidersApp
+ * Controller of the proverbial
  */
-angular.module('raidersApp')
+angular.module('proverbial')
 .factory('data', function ($http) {
   // The first selected language by default
   var alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split('');
@@ -36,7 +36,7 @@ angular.module('raidersApp')
       return languages;
     },
     getProverbs: function(path) {
-      return $http.get('/source/' + path + '.json', {cache: 'true'})
+      return $http.get('/assets/src/' + path + '.json', {cache: 'true'})
     },
     convertToLongName: function (shortName) {
       for (var i = 0, j = languages.length; i < j ; i++) {
