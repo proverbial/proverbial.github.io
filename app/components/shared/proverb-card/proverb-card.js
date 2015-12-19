@@ -8,7 +8,7 @@
     function directive() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'components/shared/proverbial-card.html',
+            templateUrl: 'components/shared/proverb-card/proverb-card.html',
             scope: {
                 proverb: '@'
             },
@@ -35,16 +35,12 @@
             b = parseInt((b + 255)/4);
 
             el.css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')')
-
-            console.log('rgb(' + r + ',' + g + ',' + b + ')');
         }
 
         Controller.$inject = ['$stateParams'];
 
         function Controller($stateParams) {
             var vm = this;
-
-            console.log($stateParams);
 
             vm.langId = $stateParams;
 

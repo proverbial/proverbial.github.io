@@ -8,7 +8,7 @@
     function directive() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'components/navbar/navbar.html',
+            templateUrl: 'components/shared/navbar/navbar.html',
             scope: {
             },
             link: linkFunc,
@@ -24,19 +24,19 @@
         }
     }
 
-    Controller.$inject = ['ProverbialFactory'];
+    Controller.$inject = ['ProverbFactory'];
 
-    function Controller(ProverbialFactory) {
+    function Controller(ProverbFactory) {
         var vm = this;
 
-        vm.getLongName = function() {
-          return ProverbialFactory.convertToLongName(ProverbialFactory.getLang());
-        }
+        // vm.getLongName = function() {
+        //     return ProverbFactory.convertToLongName(ProverbFactory.getLang());
+        // }
 
         activate();
 
         function activate() {
-            vm.alphabet = ProverbialFactory.getAlphabet();
+            vm.alphabet = ProverbFactory.getAlphabet();
         }
     }
 })();

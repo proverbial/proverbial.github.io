@@ -8,7 +8,7 @@
     function directive() {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'components/footer/footer.html',
+            templateUrl: 'components/shared/footer/footer.html',
             scope: {
             },
             link: linkFunc,

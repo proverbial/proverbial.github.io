@@ -1,0 +1,33 @@
+<!-- intro -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="text-center">Angular filters are fun</p>
+        </div>
+    </div>
+</div>
+<!-- search bar -->
+<div class="menu">
+    <div class="container">
+        <div class="search input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Search" aria-describedby="addon" ng-model="query">
+            <span class="input-group-addon" id="addon"><i class="fa fa-search"></i></span>
+        </div>
+    </div>
+</div>
+
+<!-- alphabet filter -->
+<div class="menu text-center">
+    <ul class="list-inline">
+        <li ng-repeat="letter in vm.alphabet">
+            <a href class="letter" ng-click="vm.setActiveLetter(letter)">{{letter}}</a>
+        </li>
+    </ul>
+    <a href ng-click="vm.toggleFilter()">Clear Filter</a>
+    <h4>{{}}</h4>
+</div>
+
+<!-- proverb list  | filter:query | firstLetter:activeLetter:filterEnabled -->
+<div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="proverb in vm.proverbs">
+    <div proverbial-card data-proverb={{proverb}}></div>
+</div>

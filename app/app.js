@@ -5,26 +5,35 @@
         .module('proverbial', [
             'ui.router'
         ])
-        .constant("LANG", {
-            "DEFAULT": "en",
-            "EN": "en",
-            "PT": "pt",
-            "SE": "se"
+        .constant('LANG', {
+            'DEFAULT': 'EN',
+            'EN': {
+                'shortName': 'en',
+                'longName': 'English'
+            },
+            'PT': {
+                'shortName': 'pt',
+                'longName': 'Portuguese'
+            },
+            'SE': {
+                'shortName': 'se',
+                'longName': 'Swedish'
+            }
         })
         .config(function($stateProvider, $urlRouterProvider, LANG) {
 
             $urlRouterProvider
-                .otherwise('/list');
+                .otherwise('/en');
 
             $stateProvider
-                .state('proverbial-list', {
-                    url: "/:lang",
-                    controller: 'ProverbialListCtrl',
-                    templateUrl: "components/proverbial-list/proverbial-list.html"
+                .state('proverb-list', {
+                    url: '/:lang',
+                    templateUrl: 'components/proverb-list/proverb-list.html',
+                    controller: 'ProverbListCtrl as vm'
                 })
-                .state('proverbial-detail', {
-                    url: "/:lang/:proverbId",
-                    templateUrl: "components/proverbial-detail/proverbial-detail.html",
+                .state('proverb-single', {
+                    url: '/:lang/:proverbId',
+                    templateUrl: 'components/proverb-single/proverb-single.html',
                     controller: 'ProverbCtrl as vm'
                 });
         });
