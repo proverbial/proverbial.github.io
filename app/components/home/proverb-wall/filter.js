@@ -13,7 +13,6 @@
                 input = input || [];
                 var out = [];
                 input.forEach(function (item) {
-                    console.log("current item is", item, item.charAt(0));
                     if (item.charAt(0).toUpperCase() === letter) {
                         out.push(item);
                     }

@@ -11,30 +11,47 @@
     function Controller(DEFAULT, $stateParams, ProverbFactory) {
         var vm = this;
 
+        // variables
         vm.currentLang = $stateParams.lang;
         vm.alphabet = ProverbFactory.getAlphabet();
 
-        // JSON get
-        ProverbFactory.getProverbs($stateParams.lang).success(function(result) {
-            vm.proverbs = result;
-        });
+        // functions
+        vm.disableFilter = disableFilter;
+        vm.isActive = isActive;
+        vm.setActiveLetter = setActiveLetter;
+        vm.displayMessage = displayMessage;
 
-        vm.toggleFilter = function() {
-            vm.filterEnabled = !vm.filterEnabled;
+
+        activate();
+
+        function activate() {
+            console.log('HomeCtrl controller activated.');
+            getProverbs();
         }
 
-        vm.isActive = function(letter) {
+        function getProverbs() {
+            // JSON get
+            ProverbFactory.getProverbs($stateParams.lang).success(function(result) {
+                vm.proverbs = result;
+            });
+        }
+
+        function disableFilter() {
+            vm.filterEnabled = false;
+        }
+
+        function isActive(letter) {
             return vm.activeLetter === letter;
         }
 
-        vm.setActiveLetter = function(letter) {
+        function setActiveLetter(letter) {
             if(!vm.filterEnabled) {
                 vm.filterEnabled = true;
             }
             vm.activeLetter = letter;
         };
 
-        vm.displayMessage = function() {
+        function displayMessage() {
             var message = ProverbFactory.convertToLongName(ProverbFactory.getLang()) + " proverbs";
             if(vm.filterEnabled) {
                 message += " starting with " + vm.activeLetter;
@@ -43,12 +60,6 @@
                 message += " that contain \"" + vm.query + "\"";
             }
             return message;
-        }
-
-        activate();
-
-        function activate() {
-            console.log('HomeCtrl controller activated.');
         }
     }
 })();
