@@ -1,33 +1,27 @@
-'use strict';
+(function() {
+    'use strict';
 
-/**
- * @ngdoc function
- * @name proverbial.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the proverbial
- */
+    angular
+    .module('proverbial')
+    .filter('firstLetter', filter);
 
- (function() {
-     'use strict';
+    function filter() {
+        return firstLetterFilter
 
-     angular
-         .module('proverbial')
-         .filter('firstLetter', filter);
-
-     function filter() {
-         return firstLetterFilter
-
-         function firstLetterFilter(params) {
-            return function(input, letter, enabled) {
-                if (enabled) {
-                    return (input || []).filter(function(item) {
-                    return item.charAt(0).toUpperCase() == letter;
+        function firstLetterFilter(input, letter, enabled) {
+            if (enabled) {
+                input = input || [];
+                var out = [];
+                input.forEach(function (item) {
+                    console.log("current item is", item, item.charAt(0));
+                    if (item.charAt(0).toUpperCase() === letter) {
+                        out.push(item);
+                    }
                 });
-                } else {
-                    return input || [];
-                }
-            };
-         }
-     }
- })();
+                return out || [];
+            } else {
+                return input || [];
+            }
+        }
+    }
+})();
