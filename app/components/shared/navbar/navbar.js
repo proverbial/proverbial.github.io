@@ -10,6 +10,7 @@
             restrict: 'EA',
             templateUrl: 'components/shared/navbar/navbar.html',
             scope: {
+                lang: '@'
             },
             link: linkFunc,
             controller: Controller,
@@ -24,18 +25,18 @@
         }
     }
 
-    Controller.$inject = ['ProverbFactory'];
+    Controller.$inject = ['LANG', 'DEFAULT', 'ProverbFactory'];
 
-    function Controller(ProverbFactory) {
+    function Controller(LANG, DEFAULT, ProverbFactory) {
         var vm = this;
 
-        // vm.getLongName = function() {
-        //     return ProverbFactory.convertToLongName(ProverbFactory.getLang());
-        // }
+        vm.languages = LANG;
+        vm.currentLang = LANG[vm.lang.toUpperCase()];
 
         activate();
 
         function activate() {
+            console.log(vm.currentLang);
             vm.alphabet = ProverbFactory.getAlphabet();
         }
     }

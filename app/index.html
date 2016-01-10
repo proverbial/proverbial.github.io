@@ -25,22 +25,19 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <navbar proverbial-navbar></navbar>
+    <div ui-view>
+        <!-- everything happens here -->
+    </div>
 
-    <div ui-view></div>
-
-    <footer proverbial-footer></footer>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
-    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-    }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+            (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+            r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+        }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -58,9 +55,13 @@
     <script src="app.js"></script>
     <script src="scripts/main.js"></script>
 
-    <script src="components/proverb-list/proverb.factory.js"></script>
-    <script src="components/proverb-list/filter.js"></script>
-    <script src="components/proverb-list/proverb-list.ctrl.js"></script>
+    <!-- individual components -->
+    <!-- home -->
+    <script src="components/home/home.ctrl.js"></script>
+    <script src="components/home/proverb-wall/proverb.factory.js"></script>
+    <script src="components/home/proverb-wall/filter.js"></script>
+
+    <!-- shared components -->
     <script src="components/shared/navbar/navbar.js"></script>
     <script src="components/shared/footer/footer.js"></script>
     <script src="components/shared/proverb-card/proverb-card.js"></script>

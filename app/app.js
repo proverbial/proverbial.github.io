@@ -5,8 +5,11 @@
         .module('proverbial', [
             'ui.router'
         ])
+        .constant('DEFAULT', {
+            'shortName': 'en',
+            'longName': 'English'
+        })
         .constant('LANG', {
-            'DEFAULT': 'EN',
             'EN': {
                 'shortName': 'en',
                 'longName': 'English'
@@ -20,21 +23,21 @@
                 'longName': 'Swedish'
             }
         })
-        .config(function($stateProvider, $urlRouterProvider, LANG) {
+        .config(function($stateProvider, $urlRouterProvider, DEFAULT) {
 
             $urlRouterProvider
-                .otherwise('/en');
+                .otherwise('/' + DEFAULT.shortName);
 
             $stateProvider
-                .state('proverb-list', {
+                .state('home', {
                     url: '/:lang',
-                    templateUrl: 'components/proverb-list/proverb-list.html',
-                    controller: 'ProverbListCtrl as vm'
+                    templateUrl: 'components/home/home.html',
+                    controller: 'HomeCtrl as vm'
                 })
-                .state('proverb-single', {
-                    url: '/:lang/:proverbId',
-                    templateUrl: 'components/proverb-single/proverb-single.html',
-                    controller: 'ProverbCtrl as vm'
+                .state('home.single', {
+                    url: '/:lang/:id',
+                    templateUrl: 'components/home/proverb-single/proverb-single.html',
+                    controller: 'ProverbSingleCtrl as vm'
                 });
         });
 })();

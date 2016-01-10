@@ -3,20 +3,19 @@
 
     angular
         .module('proverbial')
-        .controller('ProverbListCtrl', Controller);
+        .controller('HomeCtrl', Controller);
 
-    Controller.$inject = ['ProverbFactory', '$stateParams'];
+    Controller.$inject = ['DEFAULT', '$stateParams', 'ProverbFactory'];
 
-    function Controller(ProverbFactory, $stateParams) {
+    /* @ngInject */
+    function Controller(DEFAULT, $stateParams, ProverbFactory) {
         var vm = this;
 
-        vm.currentLang = $stateParams.currentLang;
+        vm.currentLang = $stateParams.lang;
         vm.alphabet = ProverbFactory.getAlphabet();
 
-        console.log($stateParams);
-
         // JSON get
-        ProverbFactory.getProverbs('en').success(function(result) {
+        ProverbFactory.getProverbs($stateParams.lang).success(function(result) {
             vm.proverbs = result;
         });
 
@@ -49,7 +48,7 @@
         activate();
 
         function activate() {
-            console.log('ProverbListCtrl controller activated.');
+            console.log('HomeCtrl controller activated.');
         }
     }
 })();

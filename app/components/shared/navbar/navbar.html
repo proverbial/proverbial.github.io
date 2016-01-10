@@ -12,9 +12,15 @@
         <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img ng-src="assets/img/flags/{{vm.langID()}}.png" /> {{vm.getLongName()}}<span class="caret"></span></a>
+                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <img ng-src="assets/img/flags/{{vm.currentLang.shortName}}.png" /> {{vm.currentLang.longName}}<span class="caret"></span>
+                    </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a ui-sref="proverbial.list({{vm.langID}})" ng-repeat="language in vm.languages"><img ng-src="assets/img/flags/{{vm.langShort}}.png" /> {{vm.langLong}}</a></li>
+                        <li ng-repeat="language in vm.languages">
+                            <a ui-sref="home({lang: language.shortName})">
+                                <img ng-src="assets/img/flags/{{language.shortName}}.png" /> {{language.longName}}
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
