@@ -12,7 +12,6 @@ html {
 .alert {
     border-radius: 0px;
 }
-
 .inline {
     display: inline;
 }
@@ -29,13 +28,8 @@ html {
 .card .text {
     font-size: 1.4em;
 }
-
-.card-sm {
-    height: 260px;
-}
-
-.card-lg {
-    height: 600px;
+.card {
+    float: left;
 }
 
 .container .search {

@@ -1,69 +1,95 @@
 /*
- * Color scheme from: https://color.adobe.com/Theme-2-color-theme-6131303
- */
+* Color scheme from: https://color.adobe.com/Theme-2-color-theme-6131303
+*/
+/* line 1, _test.scss */
 .card {
   display: table;
   width: 100%;
   text-align: center;
   padding: 20px;
   margin: 15px 0;
-  box-shadow: 0 2px 0 #888; }
+  box-shadow: 0 2px 0 #888;
+}
 
+/* line 7, main.scss */
 html {
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
+/* line 12, main.scss */
 .alert {
-  border-radius: 0px; }
+  border-radius: 0px;
+}
 
+/* line 15, main.scss */
 .inline {
-  display: inline; }
+  display: inline;
+}
 
+/* line 19, main.scss */
 .letter {
-  font-size: 1.8em; }
+  font-size: 1.8em;
+}
 
+/* line 23, main.scss */
 .text {
   display: table-cell;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
+/* line 28, main.scss */
 .card .text {
-  font-size: 1.4em; }
+  font-size: 1.4em;
+}
 
-.card-sm {
-  height: 260px; }
+/* line 31, main.scss */
+.card {
+  float: left;
+}
 
-.card-lg {
-  height: 600px; }
-
+/* line 35, main.scss */
 .container .search {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
+/* line 39, main.scss */
 main.container-fluid {
-  min-height: 100%; }
+  min-height: 100%;
+}
 
+/* line 43, main.scss */
 body {
   background-color: #AAB3B6;
   color: #E6F1F5;
   padding: 0;
   padding-top: 75px;
   font-family: 'Quando';
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+}
 
+/* line 52, main.scss */
 .menu {
   font-family: 'Roboto Condensed';
   font-weight: 700;
-  text-shadow: 0 1px 0 #888; }
+  text-shadow: 0 1px 0 #888;
+}
 
+/* line 58, main.scss */
 a:link,
 a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  color: #E7E3CC; }
+  color: #E7E3CC;
+}
 
+/* line 66, main.scss */
 a:active, a:focus {
-  color: #E7C299; }
+  color: #E7C299;
+}
 
+/* line 71, main.scss */
 footer {
   position: absolute;
   bottom: 0;
@@ -73,11 +99,12 @@ footer {
   background-color: #f5f5f5;
   padding-top: 19px;
   background-color: #222;
-  color: #777; }
+  color: #777;
+}
 
+/* line 83, main.scss */
 .container-narrow > hr {
-  margin: 30px 0; }
+  margin: 30px 0;
+}
 
 /* Responsive: Portrait tablets and up */
-
-/*# sourceMappingURL=main.css.map */
