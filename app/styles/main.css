@@ -7,8 +7,7 @@
   width: 100%;
   text-align: center;
   padding: 20px;
-  margin: 15px 0;
-  box-shadow: 0 2px 0 #888;
+  margin: 6px 0;
 }
 
 /* line 7, main.scss */
@@ -89,7 +88,7 @@ a:active, a:focus {
   color: #E7C299;
 }
 
-/* line 71, main.scss */
+/* line 70, main.scss */
 footer {
   position: absolute;
   bottom: 0;
@@ -102,9 +101,14 @@ footer {
   color: #777;
 }
 
-/* line 83, main.scss */
+/* line 82, main.scss */
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+/* line 86, main.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
 
 /* Responsive: Portrait tablets and up */
